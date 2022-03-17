@@ -1,3 +1,3 @@
 # SANetworking
 
-A description of this package.
+This is a package that supports networking layer without any business free logic.
