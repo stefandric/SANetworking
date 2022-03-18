@@ -1,5 +1,5 @@
 //
-//  Copyright © 2021. All rights reserved.
+//  Copyright © 2022 stefandric. All rights reserved.
 //
 //
 // .------..------..------..------..------..------..------..------..------.
