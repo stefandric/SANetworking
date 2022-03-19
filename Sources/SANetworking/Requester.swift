@@ -21,13 +21,16 @@ public enum ApiError: Error {
     case generic
     case unauthorized
     case offline
+    case decodable
 }
 
 public struct ApiClient: ApiRequest {
 
-    private let reachability: NetworkReachability = NetworkReachabilityImpl()
+    private let reachability: NetworkReachability
 
-    public init() { }
+    public init(reachability: NetworkReachability) {
+        self.reachability = reachability
+    }
 
     public func make(_ request: URLRequest) -> AnyPublisher<Data, Error> {
 

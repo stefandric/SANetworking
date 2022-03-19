@@ -12,16 +12,16 @@
 
 import Network
 
-protocol NetworkReachability {
+public protocol NetworkReachability {
     func networkAvailable() -> Bool
 }
 
-final class NetworkReachabilityImpl: NetworkReachability {
+public final class NetworkReachabilityImpl: NetworkReachability {
     var pathMonitor: NWPathMonitor
 
     private var isConnected = true
 
-    init() {
+    public init() {
         pathMonitor = NWPathMonitor()
         pathMonitor.pathUpdateHandler = { path in
             self.isConnected = path.status == .satisfied
@@ -30,7 +30,7 @@ final class NetworkReachabilityImpl: NetworkReachability {
         pathMonitor.start(queue: DispatchQueue.global(qos: .background))
     }
 
-    func networkAvailable() -> Bool {
+    public func networkAvailable() -> Bool {
         isConnected
     }
 }
